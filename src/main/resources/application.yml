@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:tcp://localhost/~/testdb
+    username: sa
+    password:
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true
+        user_sql_comments: true
+
+    hibernate:
+      ddl-auto: create
+
+logging:
+  level:
+    org.hibernate: debug
+    org:
+      apache:
+        coyote:
+          http11: debug
+
+      hibernate:
+        SQL: debug
+
+    com.example:
+      myboard: info
